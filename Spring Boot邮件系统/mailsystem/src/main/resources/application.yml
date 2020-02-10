@@ -1,0 +1,7 @@
+spring:
+  mail:
+    host: smtp.qq.com # 配置协议，这里使用的QQ邮箱
+    username: 374648769@qq.com # 作为发件人
+    password: pibyffylsovubjid # 授权码（去QQ邮箱获取的，并非登录密码）
+    default-encoding: utf-8 # 邮件的默认编码
+    fromAlias: Money # 设置发件人别名

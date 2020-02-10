@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>邮件系统</title>
+<!--    引入Jquery-->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    收件人：<input id="email" value="374648769@qq.com"><br>
+    <button id="simpleMail">发送普通文本邮件</button><br><br>
+    <button id="htmlMail">发送Html邮件</button><br><br>
+    <button id="attachmentsMail">发送带附件邮件</button><br><br>
+    <button id="inlineResourcesMail">发送图片邮件</button><br><br>
+    <button id="mailTemplate">发送模板邮件</button><br><br>
+
+</body>
+<script>
+    $("#simpleMail").click(function () {
+        var email = $("#email").val();
+        $.get("/mail/simpleMail?email=" + email, function (response) {
+            alert(response);
+        })
+    });
+    $("#htmlMail").click(function () {
+        var email = $("#email").val();
+        $.get("/mail/htmlMail?email=" + email, function (response) {
+            alert(response);
+        })
+    });
+    $("#attachmentsMail").click(function () {
+        var email = $("#email").val();
+        $.get("/mail/attachmentsMail?email=" + email, function (response) {
+            alert(response);
+        })
+    });
+    $("#inlineResourcesMail").click(function () {
+        var email = $("#email").val();
+        $.get("/mail/inlineResourcesMail?email=" + email, function (response) {
+            alert(response);
+        })
+    });
+    $("#mailTemplate").click(function () {
+        var email = $("#email").val();
+        $.get("/mail/mailTemplate?email=" + email, function (response) {
+            alert(response);
+        })
+    });
+</script>
+</html>
